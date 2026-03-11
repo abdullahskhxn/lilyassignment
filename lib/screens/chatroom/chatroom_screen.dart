@@ -18,7 +18,7 @@ class _ChatroomScreenState extends State<ChatroomScreen> {
   final List<Map<String, dynamic>> _messages = [
     {
       'type': 'system',
-      'text': 'User [Ahmad\'s Node] joined the local network',
+      'text': "User [Ahmad's Node] joined the local network",
       'time': '14:22',
     },
     {
@@ -176,7 +176,7 @@ class _ChatroomScreenState extends State<ChatroomScreen> {
                         const SizedBox(width: 8),
                         Expanded(
                           child: Text(
-                            'This chat works on local network only — no internet required',
+                            'This chat works on local network only - no internet required',
                             style: const TextStyle(
                               color: Color(0xFFFFB300),
                               fontSize: 12,

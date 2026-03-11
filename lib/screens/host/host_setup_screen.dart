@@ -208,7 +208,7 @@ class _HostSetupScreenState extends State<HostSetupScreen> {
           ),
           const SizedBox(height: 12),
           Text(
-            'You\'ll earn up to',
+            "You'll earn up to",
             style: const TextStyle(color: AppColors.textSecondary, fontSize: 13),
           ),
           Text(

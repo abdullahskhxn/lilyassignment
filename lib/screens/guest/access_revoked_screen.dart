@@ -87,7 +87,10 @@ class AccessRevokedScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Session ended at ${DateTime.now().hour}:${DateTime.now().minute.toString().padLeft(2, '0')}',
+                              () {
+                                final now = DateTime.now();
+                                return 'Session ended at ${now.hour}:${now.minute.toString().padLeft(2, '0')}';
+                              }(),
                               style: const TextStyle(
                                 color: AppColors.textSecondary,
                                 fontSize: 12,
