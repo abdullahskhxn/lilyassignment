@@ -39,7 +39,12 @@ final GoRouter appRouter = GoRouter(
       path: '/otp/:role',
       builder: (context, state) {
         final role = state.pathParameters['role'] ?? 'guest';
-        final contact = state.uri.queryParameters['contact'] ?? '';
+        final extra = state.extra;
+        final contactFromExtra =
+            extra is Map<String, dynamic> ? (extra['contact'] as String?) : null;
+        final contact = contactFromExtra ??
+            state.uri.queryParameters['contact'] ??
+            '';
         return OtpScreen(role: role, contact: contact);
       },
     ),

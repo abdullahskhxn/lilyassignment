@@ -63,7 +63,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen>
       if (mounted) {
         setState(() => _loading = false);
         context.go(
-          '/otp/${widget.role}',
+          '/otp/${widget.role}?contact=${Uri.encodeComponent(contact)}',
           extra: {'contact': contact},
         );
       }
