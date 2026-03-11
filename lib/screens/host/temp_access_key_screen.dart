@@ -51,7 +51,7 @@ class _TempAccessKeyScreenState extends State<TempAccessKeyScreen>
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<AppProvider>();
-    final key = provider.sessionKey.isEmpty ? 'STRATA-0000-A7F3-B2D9' : provider.sessionKey;
+    final accessKey = provider.sessionKey.isEmpty ? 'STRATA-0000-A7F3-B2D9' : provider.sessionKey;
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -123,7 +123,7 @@ class _TempAccessKeyScreenState extends State<TempAccessKeyScreen>
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      key,
+                      accessKey,
                       style: const TextStyle(
                         color: AppColors.primary,
                         fontSize: 22,
@@ -181,7 +181,7 @@ class _TempAccessKeyScreenState extends State<TempAccessKeyScreen>
                 children: [
                   Expanded(
                     child: OutlinedButton.icon(
-                      onPressed: () => _copyKey(key),
+                      onPressed: () => _copyKey(accessKey),
                       icon: Icon(
                         _copied ? Icons.check : Icons.copy_outlined,
                         size: 18,
