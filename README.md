@@ -59,8 +59,45 @@ Based on the STRATA system design, the application follows a streamlined process
 
 ---
 
+## 🚀 Running the Flutter Frontend
+
+The `lib/` directory contains a complete dummy Flutter frontend for the STRATA app.
+
+### Prerequisites
+* Flutter SDK ≥ 3.0.0 (install from [flutter.dev](https://flutter.dev/docs/get-started/install))
+* Dart SDK ≥ 3.0.0 (bundled with Flutter)
+* A connected device or emulator (Android, iOS, web, or desktop)
+
+### Quick Start
+```bash
+# Install dependencies
+flutter pub get
+
+# Run on your default device
+flutter run
+
+# Run on a specific device (e.g., Chrome)
+flutter run -d chrome
+```
+
+### App Screens & Navigation
+The app launches with a **Splash Screen** and then presents a **Role Selection** screen:
+
+| Role | Flow |
+|------|------|
+| **Host** | Login/OTP → Onboarding (ISP/SSID/GPS) → Setup (price, quota, users) → Dashboard |
+| **Guest** | Login/OTP → Location Permission → Nearby Hosts → Select Host → Quota → Payment → Dashboard |
+| **Both** | Emergency Chatroom (LAN-based, accessible from sidebar) |
+
+### Design
+- **Colors:** Black (`#0A0A0A`) + Teal (`#00BFA5`) backgrounds, white text.
+- **Sidebar:** Cursor/Gemini-style left sidebar — permanent on wide screens (>800 px), swipe Drawer on mobile.
+- **State:** All data is mocked locally via `Provider`; no backend required.
+
+---
+
 ## 📈 Project Roadmap
-* [ ] Development of the Guest Mobile App UI (Flutter).
+* [x] Development of the Guest Mobile App UI (Flutter).
 * [ ] Implementation of the Host Node Daemon (Python).
 * [ ] Deployment of Smart Contracts for micropayments.
 * [ ] Development of a reputation system for host/guest trust.
